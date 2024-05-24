@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAI CALC</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+
+<body>
+    <div class="cal">
+        <div id="display">
+            <span id="one"></span>
+            <span id="symbols"></span>
+            <span id="two"></span>
+            <div id="result"></div>
+        </div>
+        <div class="down">
+            <button onclick="dispalaySymb('%')">%</button>
+            <button onclick="dispalayNum()">CE</button>
+            <button onclick="clearDisplay()">AC</button>
+            <button onclick="dispalaySymb('/')">/</button>
+            <button onclick="dispalayNum(7)">7</button>
+            <button onclick="dispalayNum(8)">8</button>
+            <button onclick="dispalayNum(9)">9</button>
+            <button onclick="dispalaySymb('*')">*</button>
+            <button onclick="dispalayNum(4)">4</button>
+            <button onclick="dispalayNum(5)">5</button>
+            <button onclick="dispalayNum(6)">6</button>
+            <button onclick="dispalaySymb('-')">-</button>
+            <button onclick="dispalayNum(1)">1</button>
+            <button onclick="dispalayNum(2)">2</button>
+            <button onclick="dispalayNum(3)">3</button>
+            <button onclick="dispalaySymb('+')">+</button>
+            <button onclick="dispalayNum('.')">.</button>
+            <button onclick="dispalayNum(0)">0</button>
+            <button onclick="deleteLastNum()">DEL</button>
+            <button onclick="calculate()">=</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    let result = document.getElementById("result")
+    let one = document.getElementById("one")
+    let symbols = document.getElementById("symbols")
+    let two = document.getElementById("two")
+
+    function dispalayNum(params) {
+
+        if (symbols.textContent.includes("+") || symbols.textContent.includes("-") || symbols.textContent.includes("/") || symbols.textContent.includes("*") || symbols.textContent.includes("%")) {
+            two.textContent += params
+        } else {
+            one.textContent += params
+        }
+    }
+    function dispalaySymb(params) {
+
+        symbols.textContent = params
+    }
+    function calculate(params) {
+        if (symbols.textContent == ("+")) {
+            result.textContent = (Number(one.textContent) + Number(two.textContent))
+        } else if (symbols.textContent == ("-")) {
+            result.textContent = (Number(one.textContent) - Number(two.textContent))
+        }
+        else if (symbols.textContent == ("/")) {
+            result.textContent = (Number(one.textContent) / Number(two.textContent))
+        }
+        else if (symbols.textContent == ("*")) {
+            result.textContent = (Number(one.textContent) * Number(two.textContent))
+        }
+        else if (symbols.textContent == ("%")) {
+            result.textContent = (Number(one.textContent) % Number(two.textContent))
+        } else if (display.textContent == display.textContent) {
+            result.textContent = display.textContent
+            one.value = display.textContent
+        }
+        // one.textContent = ""
+        one.textContent = ""
+        two.textContent = ""
+        symbols.textContent = ""
+
+    }
+    function clearDisplay() {
+        let close = result.textContent;
+        let closes = one.textContent;
+        let close1 = two.textContent;
+        let close2 = symbols.textContent;
+        console.log(close);
+        result.innerHTML = close.slice(0, result.innerHTML.length - result.innerHTML.length)
+        one.innerHTML = closes.slice(0, one.innerHTML.length - one.innerHTML.length)
+        two.innerHTML = close1.slice(0, two.innerHTML.length - two.innerHTML.length)
+        symbols.innerHTML = close2.slice(0, symbols.innerHTML.length - symbols.innerHTML.length)
+    }
+</script>

@@ -1,0 +1,56 @@
+#input {
+    height: 300px;
+    text-align: right;
+    width: 326px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: grey;
+    border-radius: 25px 25px 0 0;
+}
+
+.down {
+    width: 300px;
+    flex-wrap: wrap;
+    padding: 40px 30px;
+
+}
+/* body{
+    background-color: black;
+} */
+
+.down button {
+    background-color: gray;
+    cursor: pointer;
+    height: 50px;
+    box-shadow: darkorchid;
+    color: white;
+    width: 55px;
+    margin: 0 10px 10px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.cal {
+    background-color: black;
+    /* color: red; */
+    height: 570px;
+    margin: auto;
+    width: 330px;
+    border-radius: 25px;
+}
+
+#display{
+    width: 328px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    height: 200px;
+    border-radius: 85px 85px ;
+    background-color: black;
+    font-size: 38px;
+    color: grey;
+    
+}
